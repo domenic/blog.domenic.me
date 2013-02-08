@@ -3,7 +3,7 @@ layout: post
 title: "Portable Node.js Code"
 date: 2012-10-02T00:00:00Z
 comments: true
-categories: []
+categories: [Node.js]
 ---
 
 *This post originally appeared [as a gist](https://gist.github.com/domenic/2790533), and then

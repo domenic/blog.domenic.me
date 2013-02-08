@@ -3,7 +3,7 @@ layout: post
 title: "You're Missing the Point of Promises"
 date: 2012-10-14T22:05:55Z
 comments: true
-categories: []
+categories: [Promises]
 ---
 
 *This post originally appeared [as a gist](https://gist.github.com/domenic/3889970). Since then, the development of

@@ -3,7 +3,7 @@ layout: post
 title: "Peer Dependencies"
 date: 2013-02-08T00:00:00Z
 comments: true
-categories: []
+categories: [Node.js]
 ---
 
 npm is awesome as a package manager. In particular, it handles sub-dependencies very well: if my package depends on
