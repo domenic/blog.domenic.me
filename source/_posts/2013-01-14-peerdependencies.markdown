@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "peerDependencies"
-date: 2013-02-07T00:00:00Z
+title: "Peer Dependencies"
+date: 2013-02-08T00:00:00Z
 comments: true
 categories: []
 ---
