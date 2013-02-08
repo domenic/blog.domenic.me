@@ -109,10 +109,10 @@ peer-depend on, and add it to your `package.json`:
 
 ```json
 {
-    "name": "chai-as-promised",
-    "peerDependencies": {
-        "chai": "1.x"
-    }
+  "name": "chai-as-promised",
+  "peerDependencies": {
+    "chai": "1.x"
+  }
 }
 ```
 
