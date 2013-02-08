@@ -10,7 +10,7 @@ npm is awesome as a package manager. In particular, it handles sub-dependencies 
 `request` version 2 and `some-other-library`, but `some-other-library` depends on `request` version 1, the resulting
 dependency graph looks like:
 
-```
+```text
 ├── request@2.12.0
 └─┬ some-other-library@1.2.3
   └── request@1.9.9
@@ -54,7 +54,7 @@ its `"dependencies"` hash, since that's the latest version it was tested against
 latest and greatest stuff, so you look up the latest versions of `winston` and of `winston-mail`, putting them in your
 `package.json` as
 
-```
+```json
 {
   "dependencies": {
     "winston": "0.6.2",
@@ -65,7 +65,7 @@ latest and greatest stuff, so you look up the latest versions of `winston` and o
 
 But now, running `npm install` results in the unexpected dependency graph of
 
-```
+```text
 ├── winston@0.6.2
 └─┬ winston-mail@0.2.3
   └── winston@0.5.11
@@ -93,7 +93,7 @@ Node, you should be ready to use peer dependencies!
 As proof, I present you the results of trying to install [`jitsu`](https://npmjs.org/package/jitsu) 0.11.6 with npm
 1.2.10:
 
-```
+```text
 npm ERR! peerinvalid The package flatiron does not satisfy its siblings' peerDependencies requirements!
 npm ERR! peerinvalid Peer flatiron-cli-config@0.1.3 wants flatiron@~0.1.9
 npm ERR! peerinvalid Peer flatiron-cli-users@0.1.4 wants flatiron@~0.3.0
@@ -107,7 +107,7 @@ of Flatiron. Good thing npm was around to help us figure out this conflict, so i
 Peer dependencies are pretty simple to use. When writing a plugin, figure out what version of the host package you
 peer-depend on, and add it to your `package.json`:
 
-```
+```json
 {
     "name": "chai-as-promised",
     "peerDependencies": {
