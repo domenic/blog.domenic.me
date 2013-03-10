@@ -256,7 +256,7 @@ var promise = Q.when($.get("https://github.com/kriskowal/q"));
 [ember]: https://github.com/emberjs/ember.js/commit/f7ac080db3a2a15f5814dc26fc86712cf7d252c8
 [tests]: https://github.com/domenic/promise-tests
 [rsvp.js]: https://github.com/tildeio/rsvp.js
-[follow suit]: https://twitter.com/wookiehangover/status/258641272913412096
+[followed suit]: https://twitter.com/wookiehangover/status/258641272913412096
 [promises-aplus]: https://github.com/promises-aplus
 [promises-aplus-spec]: http://promises-aplus.github.com/promises-spec/
 [promises-aplus-tests]: https://github.com/promises-aplus/promises-tests
