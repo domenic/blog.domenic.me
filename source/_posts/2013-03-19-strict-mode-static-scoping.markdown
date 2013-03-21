@@ -29,7 +29,7 @@ Using the `with` statement completely destroys the sanity of your scope chain:
 var __filename = "/my/cool/file.js";
 var anotherContext = { __filename: "/another/file.js", __dirname: "/another" };
 
-var context = Math.random > 0.5 ? anotherContext : {};
+var context = Math.random() > 0.5 ? anotherContext : {};
 with(context) {
   console.log(__filename);
 }
