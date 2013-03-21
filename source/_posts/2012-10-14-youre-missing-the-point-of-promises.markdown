@@ -240,7 +240,7 @@ In the meantime, here are the libraries that conform to Promises/A+, and that I 
 
 - [Q][] by Kris Kowal and myself: a full-featured promise library with a large, powerful API surface, adapters for
   Node.js, progress support, and preliminary support for long stack traces.
-- [rsvp.js][] by Yehuda Katz: a very small and lightweight, but still fully compliant, promise library.
+- [RSVP.js][] by Yehuda Katz: a very small and lightweight, but still fully compliant, promise library.
 - [when.js][] by Brian Cavalier: an intermediate library with utilities for managing collections of eventual tasks,
   as well as support for both progress and cancellation.
 
