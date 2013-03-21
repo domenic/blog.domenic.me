@@ -52,7 +52,7 @@ function require(moduleId) {
 }
 
 function requireStuff() {
-  if (Math.random > 0.5) {
+  if (Math.random() > 0.5) {
     eval("function require(things) { console.log('We require more ' + things); }");
   }
 
