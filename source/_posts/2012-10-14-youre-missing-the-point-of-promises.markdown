@@ -242,8 +242,7 @@ In the meantime, here are the libraries that conform to Promises/A+, and that I 
   Node.js, progress support, and preliminary support for long stack traces.
 - [rsvp.js][] by Yehuda Katz: a very small and lightweight, but still fully compliant, promise library.
 - [when.js][] by Brian Cavalier: an intermediate library with utilities for managing collections of eventual tasks,
-  as well as support for both progress and cancellation. (Versions before the as-of-now-unreleased 2.0 are
-  [not fully compliant][] with Promises/A+, however.)
+  as well as support for both progress and cancellation.
 
 If you are stuck with a crippled "promise" from a source like jQuery, I recommend using one of the above libraries'
 assimilation utilities (usually under the name `when`) to convert to a real promise as soon as possible. For example:
