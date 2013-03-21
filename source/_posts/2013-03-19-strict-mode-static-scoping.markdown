@@ -8,8 +8,8 @@ categories: [JavaScript]
 
 It is indeed
 [time to start using JavaScript's strict mode](http://www.nczonline.net/blog/2012/03/13/its-time-to-start-using-javascript-strict-mode/).
-There are many reasons, but one of the most compelling, to me, is that it brings sanity to JavaScript's scoping
-rules, by guaranteeing static scoping.
+There are many reasons, but one of the most compelling is that it brings sanity to JavaScript's scoping rules, by
+guaranteeing static scoping.
 
 Simply put, code is *statically scoped* if you can statically analyze it and determine what all the identifiers refer
 to. In other words, you can statically determine where every variable was declared. As we'll see, JavaScript's sloppy
