@@ -56,10 +56,11 @@ explained by a C++ parser turning HTML into JavaScript, our JavaScript objects c
 language, like prototypal inheritance and constructors, to build on existing HTML elements.
 
 The **shadow DOM** is another of my favorite examples. While `<p>` might be a relatively non-magical element, clearly
-there's a lot of crazy stuff going on with `<select>`! It's as if there's a whole, um, shadow DOM, hidden underneath the
-one we see, accessible only by C++. The goal of the shadow DOM spec, going back to its
-[earliest conception](http://glazkov.com/2011/01/14/what-the-heck-is-shadow-dom/), has been to bring that magic out of
-C++ and explain it in terms of [JavaScript primitives](http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/).
+there's a lot of crazy stuff going on with `<select>`! And don't get me started on `<audio>` and `<video>`. It's as if
+there's a whole, um, shadow DOM, hidden underneath the one we see, accessible only by C++. The goal of the shadow DOM
+spec, going back to its [earliest conception](http://glazkov.com/2011/01/14/what-the-heck-is-shadow-dom/), has been to
+bring that magic out of C++ and explain it in terms of
+[JavaScript primitives](http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/).
 
 But it's not just these large examples, attempting to explain HTML. What about something as simple as … **parsing
 URLs**? Clearly, the platform has this capability:
@@ -110,6 +111,7 @@ just a brief scratchpad idea list:
 - [A way of responding to requests when your app is offline](https://github.com/slightlyoff/NavigationController/blob/master/explainer.md)
 - Exposed GZIP capabilities
 - Custom scrollbars
+- Custom tooltips
 - [Custom context menus](http://davidwalsh.name/html5-context-menu)
 - [Deferred, but synchronous, exception handling](http://lists.w3.org/Archives/Public/www-dom/2013AprJun/0188.html)
 - [Observing and responding to changes to JS objects](http://updates.html5rocks.com/2012/11/Respond-to-change-with-Object-observe)
