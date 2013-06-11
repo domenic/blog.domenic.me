@@ -7,9 +7,8 @@ categories: [Web]
 ---
 
 Today we revealed [The Extensible Web Manifesto](http://extensiblewebmanifesto.org/), calling for a new approach to
-web standards that prioritizes new local-level capabilities that allow explanation and extension of higher-end platform
-features. I want to take a minute to talk about what this means in practice, and why it's different from how we operate
-today.
+web standards that prioritizes new local-level capabilities in order to explain and extend higher-end platform features.
+I want to take a minute to talk about what this means in practice, and why it's different from how we operate today.
 
 ## Show Me the Magic!
 
