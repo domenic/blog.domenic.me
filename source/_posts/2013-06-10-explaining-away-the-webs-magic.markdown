@@ -83,15 +83,15 @@ var els = document.querySelectorAll(":enabled");
 ```
 
 Well, hmm, something about ["an enabled state"](http://www.w3.org/TR/css3-selectors/#enableddisabled). I wonder what
-that means. Probably something to do with [the `disabled` attribute](http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#enabling-and-disabling-form-controls:-the-disabled-attribute). How did
-the browser know that? More magic! We passed in a string that's in a magic list called "CSS3 selectors spec," and it
-has some magic handler that turns that into "elements where `el.disabled === true`." This is a pretty high-level
-abstraction; could we explain it with technology instead of magic? What about some kind of **CSS selector
-registration**?
+that means. Probably something to do with
+[the `disabled` attribute](http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#enabling-and-disabling-form-controls:-the-disabled-attribute). How did the browser know that? More magic! We passed in a string that's in a magic
+list called "CSS3 selectors spec," and it has some magic handler that turns that into "elements where
+`el.disabled === false`." This is a pretty high-level abstraction; could we explain it with technology instead of magic?
+What about some kind of **CSS selector registration**?
 
 ```js
-document.registerSelector(":disabled", function (el) {
-    return el.disabled;
+document.registerSelector(":enabled", function (el) {
+    return !el.disabled;
 });
 ```
 
