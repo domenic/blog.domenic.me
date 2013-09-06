@@ -24,7 +24,7 @@ contextual keyword `yield` inside of itself. You can send values or exceptions i
 points where `yield` appears, via the returned generator's `next` and `throw` methods. They are created with `function*`
 syntax.
 
-A **generator expression** is a shorthand expression for creating generators, e.g. `(for (x of a) for (y of b) x * y)`.
+A **generator comprehension** is a shorthand expression for creating generators, e.g. `(for (x of a) for (y of b) x * y)`.
 
 ## Notes
 
@@ -43,7 +43,7 @@ sort.
 
 An *iterator* can also be *iterable* if it has an `@@iterator()` internal method. Most iterators in the ES6 draft spec
 are also iterable, with the internal method just returning `this`. In particular, all generators created via generator
-functions or generator expressions have this behavior. So you can do:
+functions or generator comprehensions have this behavior. So you can do:
 
 ```js
 const lazySequence = (for (x of a) for (y of b) x * y);
@@ -56,7 +56,7 @@ for (let z of lazySequence) {
 
 As of the time of this writing, there is no (easy) way in the current ES6 draft spec to make an arbitrary object
 iterable. The only way to make iterable objects via currently-specced technology is with generator functions or
-generator expressions. So in particular, you cannot create custom iterable objects that give sensible values for
+generator comprehensions. So in particular, you cannot create custom iterable objects that give sensible values for
 `for`-`of` yet.
 
 This functionality is definitely planned for ES6, however. The problem is that there's still a lot of dithering on how
@@ -83,7 +83,7 @@ do this.
 
 ### A Question
 
-I am not sure why generator expressions create generators instead of simple iterable iterators. In particular I don't
+I am not sure why generator comprehensions create generators instead of simple iterable iterators. In particular I don't
 know what calling `throw` or giving a parameter to `next` would do to the returned iterator:
 
 ```js
@@ -99,11 +99,11 @@ aGenerator.throw(new Error("boo!")); // ???
 Due to the tireless work of [Andy Wingo](http://wingolog.org/), V8 (Chrome) has support for generator functions, behind
 the `--harmony` flag (or "Experimental JavaScript Features" in chrome://flags). It also has some form of `for`-`of`,
 which seems to work with generators, but does not work with anything else (e.g. arrays). I assume this is because the
-iteration protocol has not been implemented yet. It does not have generator expressions.
+iteration protocol has not been implemented yet. It does not have generator comprehensions.
 
 SpiderMonkey (Firefox) has an old version of everything here, with outdated syntax and semantics. Over the last week or
 so, Andy has submitted patches to update their generator implementation. I don't believe he's updating generator
-expressions, or `for`-`of` and the iteration protocol. SpiderMonkey, unlike V8, does not hide these features behind a
+comprehensions, or `for`-`of` and the iteration protocol. SpiderMonkey, unlike V8, does not hide these features behind a
 default-off flag.
 
 Chakra (Internet Explorer) is as always a complete mystery, with no transparency into their development cycle or even
