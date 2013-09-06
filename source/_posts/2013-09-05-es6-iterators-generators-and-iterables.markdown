@@ -123,7 +123,7 @@ it, namely `@@iterator` and `@@unscopables`. But this should do the trick:
 const allProps = Object.getOwnPropertyKeys(Array.prototype);
 
 const iterator = allProps.find(prop =>
-  // @@unscopable is an array; @@iterator is a function.
+  // @@unscopables is an array; @@iterator is a function.
   return typeof prop === "symbol" && typeof Array.prototype[prop] === "function";
 );
 ```
