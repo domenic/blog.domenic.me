@@ -42,8 +42,8 @@ sort.
 ### Iterable Iterators
 
 An *iterator* can also be *iterable* if it has an `@@iterator()` internal method. Most iterators in the ES6 draft spec
-are also iterable. In particular, all generators created via generator functions or generator expressions are iterable.
-So you can do:
+are also iterable, with the internal method just returning `this`. In particular, all generators created via generator
+functions or generator expressions have this behavior. So you can do:
 
 ```js
 const lazySequence = (for (x of a) for (y of b) x * y);
