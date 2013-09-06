@@ -28,7 +28,7 @@ A **generator expression** is a shorthand expression for creating generators, e.
 
 ## Notes
 
-### `for`-of`
+### `for`-`of`
 
 The new `for`-`of` loop works on iterables, i.e. you do `for (let x of iterable) { /* ... */ }`. So for example, it
 works on arrays by looking up their `Array.prototype[@@iterator]()` internal method, which is specified to return an
