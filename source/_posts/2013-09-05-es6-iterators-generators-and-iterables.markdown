@@ -110,6 +110,9 @@ comprehensions. Note that SpiderMonkey, unlike V8, does not hide these features 
 Chakra (Internet Explorer) is as always a complete mystery, with no transparency into their development cycle or even
 priority list.
 
+And I still haven't forgiven JavaScriptCore (Safari) for its long period of forgetting to implement
+`Function.prototype.bind`, so I haven't even tried looking into their status.
+
 ## Bonus
 
 I said there was no easy way to make an arbitrary object iterable with the current draft spec. Well, there *is* a hard
