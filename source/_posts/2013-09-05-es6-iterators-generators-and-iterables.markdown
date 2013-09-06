@@ -98,13 +98,14 @@ aGenerator.throw(new Error("boo!")); // ???
 
 Due to the tireless work of [Andy Wingo](http://wingolog.org/), V8 (Chrome) has support for generator functions, behind
 the `--harmony` flag (or "Experimental JavaScript Features" in chrome://flags). It also has some form of `for`-`of`,
-which seems to work with generators, but does not work with anything else (e.g. arrays). I assume this is because the
+which only works with generators and with the custom iterables returned by `Array.prototype.values` and
+`Array.prototype.keys`, but does not work with anything else (e.g. arrays themselves). I assume this is because the
 iteration protocol has not been implemented yet. It does not have generator comprehensions.
 
 SpiderMonkey (Firefox) has an old version of everything here, with outdated syntax and semantics. Over the last week or
-so, Andy has submitted patches to update their generator implementation. I don't believe he's updating generator
-comprehensions, or `for`-`of` and the iteration protocol. SpiderMonkey, unlike V8, does not hide these features behind a
-default-off flag.
+so, Andy has submitted patches to update their generator implementation. He's now working on `for`-`of` and the
+iteration protocol in [bug #907077](https://bugzilla.mozilla.org/show_bug.cgi?id=907077); no word on generator
+comprehensions. Note that SpiderMonkey, unlike V8, does not hide these features behind a default-off flag.
 
 Chakra (Internet Explorer) is as always a complete mystery, with no transparency into their development cycle or even
 priority list.
