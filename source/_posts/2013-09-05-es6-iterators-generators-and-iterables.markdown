@@ -95,6 +95,22 @@ aGenerator.next(5);                  // ???
 aGenerator.throw(new Error("boo!")); // ???
 ```
 
+### Generator Comprehension Desugaring
+
+You can think of generator comprehensions as "sugar" for writing out and immediately invoking a generator function, with
+`yield`s inserted implicitly at certain points. For example, the comprehension `(for (x of a) for (y of b) x * y)`
+desugars to
+
+```js
+(function* () {
+  for (x of a) {
+    for (y of b) {
+      yield x * y;
+    }
+  }
+}());
+```
+
 ## Implementation Status
 
 Due to the tireless work of [Andy Wingo](http://wingolog.org/), V8 (Chrome) has support for generator functions, behind
