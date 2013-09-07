@@ -95,7 +95,7 @@ desugars to
       yield x * y;
     }
   }
-}());
+}())
 ```
 
 ### A Weirdness
@@ -104,11 +104,11 @@ It's not entirely clear why generator comprehensions create generators instead o
 particular, as you can see from the above desugaring, calling `throw` or giving a parameter to `next` is pretty useless:
 
 ```js
-const aGenerator = (for (x of [1, 2, 3]) x * x);
+const g = (for (x of [1, 2, 3]) x * x);
 
-aGenerator.next();                   // returns { done: false, value: 1 }
-aGenerator.next(5);                  // returns { done: false, value: 2 }
-aGenerator.throw(new Error("boo!")); // immediately throws the error
+g.next();                   // returns { done: false, value: 1 }
+g.next(5);                  // returns { done: false, value: 2 }
+g.throw(new Error("boo!")); // immediately throws the error
 ```
 
 It seems the arguments in favor of generators instead of iterable-iterators are largely that it makes implementers' jobs
@@ -121,7 +121,7 @@ Due to the tireless work of [Andy Wingo](http://wingolog.org/), V8 (Chrome) has 
 the `--harmony` flag (or "Experimental JavaScript Features" in chrome://flags). It also has some form of `for`-`of`,
 which only works with generators and with the custom iterables returned by `Array.prototype.values` and
 `Array.prototype.keys`, but does not work with anything else (e.g. arrays themselves). I assume this is because the
-iteration protocol has not been implemented yet. It does not have generator comprehensions.
+iteration protocol has not been implemented yet. V8 does not have generator comprehensions.
 
 SpiderMonkey (Firefox) has an old version of everything here, with outdated syntax and semantics. Over the last week or
 so, Andy has submitted patches to update their generator implementation. He's now working on `for`-`of` and the
