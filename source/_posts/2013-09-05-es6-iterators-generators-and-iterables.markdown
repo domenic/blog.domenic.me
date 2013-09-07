@@ -82,19 +82,6 @@ for (let x of iterable) {
 But the module system is not specified yet, so standard library modules like `"std:iteration"` are not specced yet, so
 we can't do this.
 
-### A Question
-
-I am not sure why generator comprehensions create generators instead of simple iterable iterators. In particular I don't
-know what calling `throw` or giving a parameter to `next` would do to the returned iterator:
-
-```js
-const aGenerator = (for (x of [1, 2, 3]) x * x);
-
-aGenerator.next();                   // returns { done: false, value: 1 }
-aGenerator.next(5);                  // ???
-aGenerator.throw(new Error("boo!")); // ???
-```
-
 ### Generator Comprehension Desugaring
 
 You can think of generator comprehensions as "sugar" for writing out and immediately invoking a generator function, with
@@ -110,6 +97,23 @@ desugars to
   }
 }());
 ```
+
+### A Weirdness
+
+It's not entirely clear why generator comprehensions create generators instead of simple iterable-iterators. In
+particular, as you can see from the above desugaring, calling `throw` or giving a parameter to `next` is pretty useless:
+
+```js
+const aGenerator = (for (x of [1, 2, 3]) x * x);
+
+aGenerator.next();                   // returns { done: false, value: 1 }
+aGenerator.next(5);                  // returns { done: false, value: 2 }
+aGenerator.throw(new Error("boo!")); // immediately throws the error
+```
+
+It seems the arguments in favor of generators instead of iterable-iterators are largely that it makes implementers' jobs
+easier, at least according to
+[this es-discuss thread](http://esdiscuss.org/topic/why-do-generator-expressions-return-generators) I started.
 
 ## Implementation Status
 
