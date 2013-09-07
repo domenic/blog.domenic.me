@@ -16,15 +16,16 @@ An **iterator** is an object with a `next` method that returns `{ done, value }`
 An **iterable** is an object which has an internal method, written in the current ES6 draft specs as
 `obj[@@iterator]()`, that returns an iterator.
 
-A **generator** is a specific type of iterator which also has a `throw` method, and whose `next` method takes a
-parameter.
+A **generator** is a specific type of iterator whose `next` results are determined by the behavior of its corresponding
+generator function. Generators also have a `throw` method, and their `next` method takes a parameter.
 
-A **generator function** is a special type of function that always returns a generator, and which can use the special
-contextual keyword `yield` inside of itself. You can send values or exceptions into the body of the function, at the
-points where `yield` appears, via the returned generator's `next` and `throw` methods. They are created with `function*`
-syntax.
+A **generator function** is a special type of function that acts as a constructor for generators. Generator function
+bodies can use the contextual keyword `yield`, and you can send values or exceptions into the body, at the points where
+`yield` appears, via the constructed generator's `next` and `throw` methods. Generator functions are written with
+`function*` syntax.
 
-A **generator comprehension** is a shorthand expression for creating generators, e.g. `(for (x of a) for (y of b) x * y)`.
+A **generator comprehension** is a shorthand expression for creating generators, e.g.
+`(for (x of a) for (y of b) x * y)`.
 
 ## Notes
 
