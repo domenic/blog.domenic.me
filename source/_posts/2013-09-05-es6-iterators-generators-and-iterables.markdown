@@ -64,7 +64,7 @@ This functionality is definitely planned for ES6, however. The problem is that t
 to expose "unique symbols" like `@@iterator` to JavaScript authors. I believe the plan of record is something like
 
 ```js
-import { iterator } from "@iter";
+import { iterator } from "std:iteration";
 
 const iterable = {
   *[iterator]() {
@@ -79,8 +79,8 @@ for (let x of iterable) {
 }
 ```
 
-But the module system is not specified yet, so standard library modules like `"@iter"` are not specced yet, so we can't
-do this.
+But the module system is not specified yet, so standard library modules like `"std:iteration"` are not specced yet, so
+we can't do this.
 
 ### A Question
 
