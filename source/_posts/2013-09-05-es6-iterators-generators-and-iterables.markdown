@@ -55,19 +55,13 @@ for (let z of lazySequence) {
 
 ### Making Iterable Objects
 
-As of the time of this writing, there is no (easy) way in the current ES6 draft spec to make an arbitrary object
-iterable. The only way to make iterable objects via currently-specced technology is with generator functions or
-generator comprehensions. So in particular, you cannot create custom iterable objects that give sensible values for
-`for`-`of` yet.
-
-This functionality is definitely planned for ES6, however. The problem is that there's still a lot of dithering on how
-to expose "unique symbols" like `@@iterator` to JavaScript authors. I believe the plan of record is something like
+To make a custom iterable object, you use the `Symbol.iterator` symbol, which is the inside-JavaScript way of referring
+to the specification's `@@iterator`. It should return an iterator, thus making your object iterable. The easiest way to
+write the iterator-returning method is to use generator syntax. Putting this all together, it looks like
 
 ```js
-import { iterator } from "std:iteration";
-
 const iterable = {
-  *[iterator]() {
+  *[Symbol.iterator]() {
     yield 1;
     yield 2;
     yield 3;
@@ -78,9 +72,6 @@ for (let x of iterable) {
   console.log(x);
 }
 ```
-
-But the module system is not specified yet, so standard library modules like `"std:iteration"` are not specced yet, so
-we can't do this.
 
 ### Generator Comprehension Desugaring
 
@@ -133,47 +124,3 @@ priority list.
 
 And I still haven't forgiven JavaScriptCore (Safari) for its long period of forgetting to implement
 `Function.prototype.bind`, so I haven't even tried looking into their status.
-
-## Bonus
-
-I said there was no easy way to make an arbitrary object iterable with the current draft spec. Well, there *is* a hard
-way. Remember, the sticking point is trying to get a reference to that `@@iterator` symbol so we can use it with our
-objects. But remember, `Array.prototype` already has that `@@iterator` symbol on it.
-
-The trick uses a new method, `Object.getOwnPropertyKeys`, which will expose all properties of an object, even if they
-are unique symbols like `@@iterator`. We'll need to do a bit of work, since `Array.prototype` has two unique symbols on
-it, namely `@@iterator` and `@@unscopables`. But this should do the trick:
-
-```js
-const allProps = Object.getOwnPropertyKeys(Array.prototype);
-
-const iterator = allProps.find(prop =>
-  // @@unscopables is an array; @@iterator is a function.
-  return typeof prop === "symbol" && typeof Array.prototype[prop] === "function";
-);
-```
-
-Now we can create custom iterable objects, e.g. using generator method syntax like above. To end, I'll create a custom
-iterable object that returns a random number each time and has a 10% chance of stopping each time you advance it. I'll
-do so without using generator method syntax just to show you that you can.
-
-```js
-const randomIterable = {
-  [iterator]() {
-    return {
-      next() {
-        return {
-          value: Math.random(),
-          done: Math.random() < 0.1
-        };
-      }
-    };
-  }
-};
-
-for (let x of randomIterable) {
-  console.log(x);
-}
-```
-
-As of now, no engine implements `Object.getOwnPropertyKeys`. So it goes.
