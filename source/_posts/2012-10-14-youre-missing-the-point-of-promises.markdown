@@ -9,6 +9,10 @@ categories: [Promises]
 *This post originally appeared [as a gist](https://gist.github.com/domenic/3889970). Since then, the development of
 Promises/A+ has made its emphasis on the Promises/A spec seem somewhat outdated.*
 
+*Contrary to some mistaken statements on the internet, the problems with jQuery's promises explained here are not fixed
+in recent versions; as of 2.1 beta 1 they have all the same problems outlined here, and according to one jQuery core
+team member, [they will forever remain broken][broken-promises], in the name of backward compatibility.*
+
 **Promises** are a software abstraction that makes working with asynchronous operations much more pleasant. In the most
 basic definition, your code will move from continuation-passing style:
 
@@ -32,6 +36,7 @@ about a disturbing trend I am seeing in recent JavaScript libraries that have ad
 miss the point of promises*.
 
 
+[broken-promises]: http://esdiscuss.org/topic/a-challenge-problem-for-promise-designers-was-re-futures#content-43
 [presentation]: http://www.slideshare.net/domenicdenicola/callbacks-promises-and-coroutines-oh-my-the-evolution-of-asynchronicity-in-javascript
 
 
