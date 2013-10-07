@@ -41,7 +41,7 @@ We need our platform to be better, and so we *make* it better, by ourselves.
 
 ## The Extensible Web Manifesto
 
-The [Extensible Web Manifesto](http://extensiblewebmanifesto.org/) is standards bodies saying they're reading to do
+The [Extensible Web Manifesto](http://extensiblewebmanifesto.org/) is standards bodies saying they're ready to do
 their part. Until now, we, the developers, have been shouldering all the work, writing massive JavaScript libraries or
 transpilers to reinvent basic functionality.
 
