@@ -53,7 +53,7 @@ evolve.
 This evolution of our shared language takes place in two acts:
 
 1. extending our basic vocabulary;
-2. starting to [incorpate "slang"](http://briankardell.wordpress.com/2013/05/17/dropping-the-f-bomb/).
+2. starting to [incorporate "slang"](http://briankardell.wordpress.com/2013/05/17/dropping-the-f-bomb/).
 
 ## Extending our Vocabulary
 
