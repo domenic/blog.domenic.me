@@ -247,7 +247,7 @@ For example, if you wanted to figure out what a zlib API for the browser should 
 
 More generally, if you want to be involved in helping the web succeed by guiding us toward better standards, then let's
 talk. It's an area I've been diving into over the last year, stemming from my Promises/A+ work but expanding into many
-other things. Finding the right approach and content is delicate, as these people are used to newbies coming out of the
+other things. Finding the right approach and content is delicate, as these people are jaded by newbies coming out of the
 woodwork to demand feature X. But if you approach in good faith and avoid a prideful demeanor, they're often happy to
 listen. I've had a few success stories in this area already, and by this time next year I want to have a lot more.
 
