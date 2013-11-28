@@ -110,6 +110,10 @@ module OctopressLiquidFilters
     input.gsub(/\s{2,}/, ' ')
   end
 
+  def remove_first_paragraph(input)
+    input.sub(/^[^\n]+\n\n/, '')
+  end
+
   # Removes trailing forward slash from a string for easily appending url segments
   def strip_slash(input)
     if input =~ /(.+)\/$|^\/$/
