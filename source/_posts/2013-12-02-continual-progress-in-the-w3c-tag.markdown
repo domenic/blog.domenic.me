@@ -19,8 +19,9 @@ necessary to make our open platform as attractive to developers and users as it 
 walled gardens of closed app stores and vendor-proprietary development platforms, we must provide something better.
 
 The TAG is in a unique position to oversee these efforts, with its charter to steward the evolution of web architecture
-and coordinate with other relevant groups like Ecma TC39 and the IETF. As such, I'm excited to be running for TAG
-membership in this [newest election cycle](http://www.w3.org/blog/TAG/2013/11/06/tag-election-2013/).
+and coordinate with other relevant groups like Ecma TC39 and the IETF. As such, I'm excited to be
+[running for TAG membership](http://lists.w3.org/Archives/Public/www-tag/2013Dec/0004.html) in this
+[newest election cycle](http://www.w3.org/blog/TAG/2013/11/06/tag-election-2013/).
 
 Over the last year of my increasing involvement in web standards, I've found two things to be paramount: _developer
 involvement_, and _a focus on solid low-level primitives_. Independent of any formal role in the process, I have and
