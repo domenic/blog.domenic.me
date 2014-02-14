@@ -49,7 +49,7 @@ In contrast, with the revealing constructor pattern, we get our nice constructor
 
 ```js
 p instanceof Promise;
-p.constructor ==== Promise;
+p.constructor === Promise;
 Object.getPrototypeOf(p) === Promise.prototype;
 ```
 
