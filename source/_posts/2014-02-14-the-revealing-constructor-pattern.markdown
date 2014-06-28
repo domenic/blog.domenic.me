@@ -82,7 +82,7 @@ var myNodeStream = new FileReaderStream("/path/to/file.txt");
 There are two interesting actors here:
 
 - `_read`, a method not meant to be called by users directly, but instead called by the internals of the stream when it's time to read data from the underlying source.
-- `push` and `emit("error", e)`, which have the capability to manipulate the stream's internal buffer and state machine. They too not meant to be called by users directly, but instead only by implementers, inside their `_read` method (or perhaps inside the constructor).
+- `push` and `emit("error", e)`, which have the capability to manipulate the stream's internal buffer and state machine. They too are not meant to be called by users directly, but instead only by implementers, inside their `_read` method (or perhaps inside the constructor).
 
 Interestingly, these are almost exactly analogous to the promise situation. `_read` is like the executor argment passed to the promise constructor, in that it consists of user code that does the actual work. And `push`/`emit` are capabilities, like `resolve`/`reject`, which can be used by the work-doing function to manipulate internal state.
 
