@@ -93,10 +93,10 @@ In contrast, the revealing constructor pattern works out really well. To create 
 ```js
 function createFileReaderStream(filename) {
   return new ReadableStream({
-    pull(push, close, error) {
-      // Use `filename` to eventually call `push(chunk)` with
-      // some data from the file, or `close()` to close the
-      // stream, or `error(e)` with an error.
+    pull(enqueue, close, error) {
+      // Use `filename` to eventually call `enqueue(chunk)`
+      // with some data from the file, or `close()` to
+      // close the stream, or `error(e)` with an error.
     }
   });
 }
