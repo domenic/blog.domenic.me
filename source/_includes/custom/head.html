@@ -1,13 +1,9 @@
-<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic">
 
 {% if page.title == nil %}<meta property="twitter:account_id" content="30968081" />{% endif %}
-
-{% if page.title %}
-    {% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:creator" content="@domenic" />
-    <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:description" content="{{ description | strip_html | condense_spaces | truncate:250 }}" />
-{% endif %}
+{% if page.title %}{% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ content | raw_content }}{% endif %}{% endcapture %}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@domenic">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ description | strip_html | condense_spaces | truncate:250 }}">{% endif %}
