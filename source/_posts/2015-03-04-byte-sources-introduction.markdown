@@ -18,7 +18,7 @@ This division is conceptually helpful, but it's instructive to go deeper and loo
 
 So far these are the episodes I have planned:
 
-1. Reading from files
+1. [Reading from files](/reading-from-files/)
 2. Reading from sockets
 3. Byte source APIs on Windows
 4. Byte source APIs in libuv and io.js

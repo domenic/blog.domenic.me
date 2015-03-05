@@ -1,10 +1,9 @@
 ---
 layout: post
-title: "Reading From Files"
+title: "Reading from Files"
 date: 2015-03-05T00:00:00Z
 comments: true
 categories: [Streams]
-published: false
 ---
 
 _This post is part of a series on the byte sources underlying the readable streams in the Streams Standard. See [the introductory post](/byte-sources-introduction/) for more background and links to the rest of the series._
@@ -65,4 +64,4 @@ Note how once `buffer` has been transferred, the `buffer` instance itself is now
 
 We could also imagine other ways of avoiding the data races. For example, if we had an API that allowed the background thread to first detach, then "reattach," the backing memory to `buffer`, we wouldn't need the separate `buffer` and `result` variables pointing to the same backing memory. Ideally such an API would allow us to detach and reattach _sections_ of the `ArrayBuffer`, so that I could (for example) read multiple files in parallel into different sections of one large buffer. [I proposed this on es-discuss](https://esdiscuss.org/topic/improving-detachment-for-array-buffers), but nobody seemed to be interested.
 
-Alternately, we could decide that for a low-level JavaScript API representing a file descriptor, data races are OK after all. In that case, [Mozilla's `SharedArrayBuffer` proposal](https://blog.mozilla.org/javascript/2015/02/26/the-path-to-parallel-javascript/) would be a good fit—we'll just write to the shared array buffer in the background thread, while still allowing reading in the main thread. As mentioned before, it might be hard to get such a primitive past multiple vendors and into standards—but the desire to transpile threaded C and C++ code into asm.js is proving to be a powerful motivator, which might push it into acceptance.
+Alternately, we could decide that for a low-level JavaScript API representing a file descriptor, data races are OK after all. In that case, [Mozilla's `SharedArrayBuffer` proposal](https://blog.mozilla.org/javascript/2015/02/26/the-path-to-parallel-javascript/) would be a good fit—we'll just write to the shared array buffer in the background thread, while still allowing reading in the main thread. As mentioned before, it might be hard to get such a primitive past multiple vendors and into the relevant standards. But the desire to transpile threaded C and C++ code into asm.js is proving to be a powerful motivator, which might push it into acceptance.
