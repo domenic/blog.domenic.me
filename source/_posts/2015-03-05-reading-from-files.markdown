@@ -20,7 +20,7 @@ Translated into JavaScript this might look something like
 const bytesRead = file.readInto(buffer, offset, count);
 ```
 
-which will attempt to read `count` bytes into the `ArrayBuffer` `buffer`, starting at position `offset`. The returned number of bytes, `bytesRead`, might be less than the desired `count`, usually because you've reached the end of the file.
+which will attempt to read `count` bytes into the `ArrayBuffer` `buffer`, starting at position `offset` into the `ArrayBuffer`. The returned number of bytes, `bytesRead`, might be less than the desired `count`, usually because you've reached the end of the file.
 
 The most interesting thing to note about read(2) is that it is blocking. So our above naive translation into JavaScript would actually lock up your browser or server for the amount of time the I/O happens. This is obviously a no-go if you're trying to write a server that serves more than one user in parallel, or trying to create a responsive 60 fps web page.
 
