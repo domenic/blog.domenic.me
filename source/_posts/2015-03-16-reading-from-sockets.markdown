@@ -43,7 +43,8 @@ Once we know that the socket has some data available, what should the JavaScript
 ```js
 socket.on("readable", () => {
   const bytesRead = socket.readInto(buffer, offset, count);
-  // `buffer`'s bytes in the range (offset, offset + bytesRead) have been filled in
+  // `buffer`'s bytes in the range (offset, offset + bytesRead)
+  // have been filled in
 });
 ```
 
