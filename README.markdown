@@ -3,7 +3,7 @@
 Reminder of how to deploy:
 
 ```
-TZ=UTC bundle exec rake generate
+bundle exec rake generate
 bundle exec rake deploy
 ```
 
