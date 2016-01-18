@@ -23,3 +23,7 @@ timezone: UTC
 url: "https://blog.domenic.me"
 baseurl: "" # the subpath of your site, e.g. /blog
 permalink: /:title
+
+# Integrations
+disqus_short_name: hiddenvariables
+disqus_show_comment_count: true

@@ -1,0 +1,16 @@
+{% comment %} Load script if disquss comments are enabled and `page.comments` is either empty (index) or set to true {% endcomment %}
+{% if site.disqus_short_name and page.comments != false %}
+  {% if page.comments == true %}
+    {% comment %} `page.comments` can be only be set to true on pages/posts, so we embed the comments here. {% endcomment %}
+    <script>
+      "use strict";
+      window.disqus_config = function () {
+        // Need trailing slash here since that's what Disqus knows me by.
+        this.page.url = '{{ site.url }}{{ page.url }}/';
+        this.page.identifier = '{{ site.url }}{{ page.url }}/';
+      };
+    </script>
+    <script src="https://{{ site.disqus_short_name }}.disqus.com/embed.js" async></script>
+  {% endif %}
+  <script id="dsq-count-scr" src="https://{{ site.disqus_short_name }}.disqus.com/count.js" async></script>
+{% endif %}
