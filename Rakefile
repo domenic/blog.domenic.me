@@ -175,7 +175,7 @@ end
 
 desc "Clean out caches: .pygments-cache, .gist-cache, .sass-cache"
 task :clean do
-  rm_rf [".pygments-cache/**", ".gist-cache/**", ".sass-cache/**", "source/stylesheets/screen.css"]
+  rm_rf [Dir.glob(".pygments-cache/**"), Dir.glob(".gist-cache/**"), Dir.glob(".sass-cache/**"), "source/stylesheets/screen.css"]
 end
 
 desc "Move sass to sass.old, install sass theme updates, replace sass/custom with sass.old/custom"
@@ -253,7 +253,7 @@ multitask :push do
   puts "## Deploying branch to Github Pages "
   puts "## Pulling any updates from Github Pages "
   cd "#{deploy_dir}" do 
-    system "git pull"
+    Bundler.with_clean_env { system "git pull" }
   end
   (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
   Rake::Task[:copydot].invoke(public_dir, deploy_dir)
@@ -265,7 +265,7 @@ multitask :push do
     puts "\n## Committing: #{message}"
     system "git commit -m \"#{message}\""
     puts "\n## Pushing generated #{deploy_dir} website"
-    system "git push origin #{deploy_branch}"
+    Bundler.with_clean_env { system "git push origin #{deploy_branch}" }
     puts "\n## Github Pages deploy complete"
   end
 end
@@ -322,7 +322,7 @@ task :setup_github_pages, :repo do |t, args|
     user = repo_url.match(/github\.com\/([^\/]+)/)[1]
   end
   branch = (repo_url.match(/\/[\w-]+\.github\.(?:io|com)/).nil?) ? 'gh-pages' : 'master'
-  project = (branch == 'gh-pages') ? repo_url.match(/\/([^\.]+)/)[1] : ''
+  project = (branch == 'gh-pages') ? repo_url.match(/([^\/]+?)(\.git|$)/i)[1] : ''
   unless (`git remote -v` =~ /origin.+?octopress(?:\.git)?/).nil?
     # If octopress is still the origin remote (from cloning) rename it to octopress
     system "git remote rename origin octopress"
@@ -341,8 +341,9 @@ task :setup_github_pages, :repo do |t, args|
       end
     end
   end
+  url = blog_url(user, project, source_dir)
   jekyll_config = IO.read('_config.yml')
-  jekyll_config.sub!(/^url:.*$/, "url: #{blog_url(user, project)}")
+  jekyll_config.sub!(/^url:.*$/, "url: #{url}")
   File.open('_config.yml', 'w') do |f|
     f.write jekyll_config
   end
@@ -350,7 +351,7 @@ task :setup_github_pages, :repo do |t, args|
   mkdir deploy_dir
   cd "#{deploy_dir}" do
     system "git init"
-    system "echo 'My Octopress Page is coming soon ...' > index.html"
+    system 'echo "My Octopress Page is coming soon &hellip;" > index.html'
     system "git add ."
     system "git commit -m \"Octopress init\""
     system "git branch -m gh-pages" unless branch == 'master'
@@ -387,11 +388,12 @@ def ask(message, valid_options)
   answer
 end
 
-def blog_url(user, project)
-  url = if File.exists?('source/CNAME')
-    "http://#{IO.read('source/CNAME').strip}"
+def blog_url(user, project, source_dir)
+  cname = "#{source_dir}/CNAME"
+  url = if File.exists?(cname)
+    "http://#{IO.read(cname).strip}"
   else
-    "http://#{user}.github.io"
+    "http://#{user.downcase}.github.io"
   end
   url += "/#{project}" unless project == ''
   url

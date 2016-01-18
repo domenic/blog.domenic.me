@@ -6,7 +6,7 @@ PYGMENTS_CACHE_DIR = File.expand_path('../../.pygments-cache', __FILE__)
 FileUtils.mkdir_p(PYGMENTS_CACHE_DIR)
 
 module HighlightCode
-  def highlight(str, lang)
+  def self.highlight(str, lang)
     lang = 'ruby' if lang == 'ru'
     lang = 'objc' if lang == 'm'
     lang = 'perl' if lang == 'pl'
@@ -15,7 +15,7 @@ module HighlightCode
     wrap_code(str, lang)
   end
 
-  def pygments(code, lang)
+  def self.pygments(code, lang)
     if defined?(PYGMENTS_CACHE_DIR)
       path = File.join(PYGMENTS_CACHE_DIR, "#{lang}-#{Digest::MD5.hexdigest(code)}.html")
       if File.exist?(path)
@@ -33,7 +33,8 @@ module HighlightCode
     end
     highlighted_code
   end
-  def wrap_code (str, lang = '')
+
+  def self.wrap_code (str, lang = '')
     "<pre class='highlight'><code class='#{lang}'>#{str}</code></pre>"
   end
 end
