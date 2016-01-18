@@ -9,8 +9,6 @@
 title: Hidden Variables
 email: d@domenic.me
 description: Domenic's blog about coding and stuff
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://blog.domenic.me" # the base hostname & protocol for your site
 twitter_username: domenic
 github_username:  domenic
 
@@ -20,3 +18,8 @@ redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "smart"]
 
 timezone: UTC
+
+# URL settings
+url: "https://blog.domenic.me"
+baseurl: "" # the subpath of your site, e.g. /blog
+permalink: /:title
