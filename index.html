@@ -9,6 +9,7 @@ layout: default
         {{ page.date | date: "%b %-d, %Y" }}
 
         {% include disqus-comment-link.html %}
+        | posted in {% include category-links.html %}
       </span>
 
       <h2><a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h2>
