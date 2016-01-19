@@ -29,6 +29,11 @@ jekyll-archives:
   permalinks:
     category: '/categories/:name/'
 
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
 # URL settings
 url: "https://blog.domenic.me"
 baseurl: "" # the subpath of your site, e.g. /blog
