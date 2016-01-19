@@ -7,9 +7,13 @@ bundle exec jekyll serve
 # Now open up http://localhost:4000/
 ```
 
-To do a deploy: not figured out yet.
+To do a deploy:
 
-## TODOs to regain parity with live Octopress 2 version:
+```
+bundle exec octopress deploy
+```
+
+## TODOs to regain parity with previous Octopress 2 version:
 
 - Front page, including pagination maybe, or at least some archives
 - Recent posts sidebar, maybe?
