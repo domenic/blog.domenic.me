@@ -19,6 +19,15 @@ redcarpet:
 
 timezone: UTC
 
+gems:
+  - jekyll-archives
+
+jekyll-archives:
+  enabled: [categories]
+  layout: 'archive'
+  permalinks:
+    category: '/categories/:name/'
+
 # URL settings
 url: "https://blog.domenic.me"
 baseurl: "" # the subpath of your site, e.g. /blog
