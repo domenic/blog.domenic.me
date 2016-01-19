@@ -11,7 +11,6 @@ To do a deploy: not figured out yet.
 
 ## TODOs to regain parity with live Octopress 2 version:
 
-- Subtitle on top of site instead of in footer, maybe?
 - Front page, including pagination maybe, or at least some archives
 - Recent posts sidebar, maybe?
 - Site search, maybe?
