@@ -11,7 +11,6 @@ To do a deploy: not figured out yet.
 
 ## TODOs to regain parity with live Octopress 2 version:
 
-- Links to categories everywhere they appear (including archive page)
 - Link to archives from top of site (might need to restore some deleted code)
 - Link to RSS from top of site
 - Subtitle on top of site instead of in footer, maybe?

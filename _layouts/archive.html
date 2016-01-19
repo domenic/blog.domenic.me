@@ -12,19 +12,19 @@ footer: false
 {% assign posts = site.posts %}
 {% endif %}
 
-{% for post in posts reverse %}
-{% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+{% for page in posts reverse %}
+{% capture this_year %}{{ page.date | date: "%Y" }}{% endcapture %}
 {% unless year == this_year %}
   {% assign year = this_year %}
   <h2>{{ year }}</h2>
 {% endunless %}
 <article>
-  {% capture category %}{{ post.categories | size }}{% endcapture %}
-  <h1><a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h1>
-  <time datetime="{{ post.date | datetime | date_to_xmlschema }}" pubdate>{{ post.date | date: "<span class='month'>%b</span> <span class='day'>%d</span> <span class='year'>%Y</span>"}}</time>
+  {% capture category %}{{ page.categories | size }}{% endcapture %}
+  <h1><a href="{{ root_url }}{{ page.url }}">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</a></h1>
+  <time datetime="{{ page.date | datetime | date_to_xmlschema }}" pubdate>{{ page.date | date: "<span class='month'>%b</span> <span class='day'>%d</span> <span class='year'>%Y</span>"}}</time>
   {% if category != '0' %}
   <footer>
-    <span class="categories">posted in {{ post.categories | category_links }}</span>
+    <span class="categories">posted in {% include category-links.html %}</span>
   </footer>
   {% endif %}
 </article>

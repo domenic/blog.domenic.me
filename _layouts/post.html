@@ -7,9 +7,10 @@ layout: default
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
     <p class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
-      {% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
+      {% if page.author %}| <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
       {% include disqus-comment-link.html %}
       | <a href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}&amp;via={{ site.twitter_username }}">Tweet</a>
+      | posted in {% include category-links.html %}
     </p>
   </header>
 
