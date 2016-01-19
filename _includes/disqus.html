@@ -5,9 +5,8 @@
     <script>
       "use strict";
       window.disqus_config = function () {
-        // Need trailing slash here since that's what Disqus knows me by.
-        this.page.url = '{{ site.url }}{{ page.url }}/';
-        this.page.identifier = '{{ site.url }}{{ page.url }}/';
+        this.page.url = '{{ site.url }}{{ page.url }}';
+        this.page.identifier = '{{ site.url }}{{ page.url }}';
       };
     </script>
     <script src="https://{{ site.disqus_short_name }}.disqus.com/embed.js" async></script>
