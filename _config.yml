@@ -11,6 +11,7 @@ email: d@domenic.me
 description: Domenic's blog about coding and stuff
 twitter_username: domenic
 github_username:  domenic
+author: Domenic Denicola
 
 # Build settings
 markdown: redcarpet

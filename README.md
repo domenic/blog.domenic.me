@@ -15,7 +15,6 @@ To do a deploy: not figured out yet.
 - Link to RSS from top of site
 - Subtitle on top of site instead of in footer, maybe?
 - Front page, including pagination maybe, or at least some archives
-- Copyright in the footer
 - Recent posts sidebar, maybe?
 - Site search, maybe?
 - Author name in post pages, maybe?
