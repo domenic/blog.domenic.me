@@ -8,3 +8,10 @@
 <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/atom.xml" | prepend: site.baseurl | prepend: site.url }}">
+
+{% if page.title == nil %}<meta property="twitter:account_id" content="30968081">{% endif %}
+{% if page.title %}{% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ page.content }}{% endif %}{% endcapture %}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@domenic">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ description | strip_html | condense_spaces | truncate:250 }}">{% endif %}
