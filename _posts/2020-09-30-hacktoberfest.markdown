@@ -70,6 +70,6 @@ less-pleasant place to be, and I hope GitHub can think seriously about how to di
 attacks on the open source community.
 
 Finally, and most importantly, we can remember that this is how DigitalOcean treats the open source maintainer
-community, and stay away from their products going forward. Although we've enjoyed using then for hosting the
+community, and stay away from their products going forward. Although we've enjoyed using them for hosting the
 [WHATWG](https://whatwg.org/) standards organization, this kind of behavior is not something we want to support, so
 we're starting to investigate alternatives.
