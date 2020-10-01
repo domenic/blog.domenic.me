@@ -32,9 +32,9 @@ Myself and other maintainers of the whatwg/html repository are not alone in suff
 [computer club website](https://mobile.twitter.com/zekjur/status/1311411780162326531), and
 [a conference website](https://mobile.twitter.com/juliusvolz/status/1311412919196844038), just within the first couple
 of hours. Since then a dedicated account "[@shitoberfest](https://twitter.com/shitoberfest)" has arisen to document the
-barrage. Some [cursory](https://github.com/search?q=is%3Apr+%22amazing+project%22&type=Issues)
-[searches](https://github.com/search?o=desc&q=is%3Apr+%22improve+docs%22&s=created&type=Issues) show hundreds of
-thousands of spam pull requests, and rising.
+barrage. Some [cursory](https://github.com/search?q=is%3Apr+%22improve+docs%22+created%3A%3E2020-09-29&type=Issues)
+[searches](https://github.com/search?q=is%3Apr+label%3Ainvalid+created%3A%3E2020-09-29&type=Issues) show thousands of
+spam pull requests, and rising.
 
 DigitalOcean seems to be aware that they have a spam problem. Their solution, per their
 [FAQ](https://hacktoberfest.digitalocean.com/faq), is to put the burden solely on the shoulders of maintainers. If we go
