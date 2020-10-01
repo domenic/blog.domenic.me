@@ -27,9 +27,14 @@ Myself and other maintainers of the whatwg/html repository are not alone in suff
 [My tweet](https://twitter.com/gravitystorm/status/1311386082982924289) got commiseration from
 [OpenStreetMap, phpMyAdmin](https://mobile.twitter.com/gravitystorm/status/1311386082982924289),
 [PubCSS](https://mobile.twitter.com/ulmerleben/status/1311378655231332355),
-[GitHub, the Financial Times](https://mobile.twitter.com/JakeDChampion/status/1311389420638138370), a
+[GitHub, the Financial Times](https://mobile.twitter.com/JakeDChampion/status/1311389420638138370),
+[ESLint](https://twitter.com/slicknet/status/1311377444188770312), a
 [computer club website](https://mobile.twitter.com/zekjur/status/1311411780162326531), and
-[a conference website](https://mobile.twitter.com/juliusvolz/status/1311412919196844038).
+[a conference website](https://mobile.twitter.com/juliusvolz/status/1311412919196844038), just within the first couple
+of hours. Since then a dedicated account "[@shitoberfest](https://twitter.com/shitoberfest)" has arisen to document the
+barrage. Some [cursory](https://github.com/search?q=is%3Apr+%22amazing+project%22&type=Issues)
+[searches](https://github.com/search?o=desc&q=is%3Apr+%22improve+docs%22&s=created&type=Issues) show hundreds of
+thousands of spam pull requests, and rising.
 
 DigitalOcean seems to be aware that they have a spam problem. Their solution, per their
 [FAQ](https://hacktoberfest.digitalocean.com/faq), is to put the burden solely on the shoulders of maintainers. If we go
@@ -39,7 +44,9 @@ finally find a repository where the maintainer doesn't bother to tag the PR as s
 available during the seven-day window DigitalOcean uses for spam-tracking.
 
 To be clear, myself and my fellow maintainers did not ask for this. This is not an opt-in situation. If your open source
-project is public on GitHub, DigitalOcean will incentivize people to spam you. There is no consent involved.
+project is public on GitHub, DigitalOcean will incentivize people to spam you. There is no consent involved. Either we
+contribute to DigitalOcean's marketing project, or,
+[they suggest, we should quit open source](https://twitter.com/SudoFox/status/1311431141702819840).
 
 Hacktoberfest does not support open source. Instead, it drives open source maintainers even closer to
 [burnout](https://www.google.com/search?q=open+source+burnout).
