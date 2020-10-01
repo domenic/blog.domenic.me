@@ -70,7 +70,10 @@ showed that "only" 3,712 pull requests were labeled as spam by project maintaine
 
 If you're comfortable cutting off genuine contributions from new users, you can try enabling GitHub's
 [interaction limits](https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/limiting-interactions-in-your-repository).
-However, you have to do this every 24 hours, and it has the drawback of also disabling issue creation and comments.
+However, <del>you have to do this every 24 hours, and</del> it has the drawback of also disabling issue creation and
+comments. <ins>Update: GitHub has made the limit configurable, and has
+[a nice cheeky announcement tweet](https://twitter.com/github/status/1311772722234560517) zooming in on the "1 month"
+option.</ins>
 
 Another promising route would be if GitHub would cut off DigitalOcean's API access, as
 [Andrew Ayer has suggested](https://twitter.com/__agwa/status/1311399074814472194). It's not clear whether DigitalOcean
