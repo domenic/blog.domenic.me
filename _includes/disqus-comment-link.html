@@ -1,3 +1,0 @@
-{% if site.disqus_short_name and page.comments != false and site.disqus_show_comment_count == true %}
- | <a href="{{ root_url }}{{ page.url }}#disqus_thread" data-disqus-identifier="{% if page.meta.disqus_id %}{{ page.meta.disqus_id }}{% else %}{{ site.url }}{{ page.url }}{% endif %}">Comments</a>
-{% endif %}

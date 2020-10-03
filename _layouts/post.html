@@ -8,7 +8,7 @@ layout: default
     <p class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
       {% if page.author %}| <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}
-      {% include disqus-comment-link.html %}
+      {% include commento-comment-link.html %}
       | <a href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}&amp;via={{ site.twitter_username }}">Tweet</a>
       | posted in {% include category-links.html %}
     </p>
@@ -20,10 +20,10 @@ layout: default
 
 </article>
 
-{% if site.disqus_short_name and page.comments == true %}
+{% if page.comments == true %}
   <section>
     <h1>Comments</h1>
-    <div id="disqus_thread"></div>
+    <div id="commento"></div>
   </section>
 {% endif %}
 

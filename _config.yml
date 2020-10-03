@@ -40,6 +40,4 @@ baseurl: "" # the subpath of your site, e.g. /blog
 permalink: /:title/
 
 # Integrations
-disqus_short_name: hiddenvariables
-disqus_show_comment_count: true
 google_analytics_tracking_id: UA-37626687-1
