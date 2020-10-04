@@ -1,0 +1,16 @@
+---
+renderData:
+  title: "{{ category }}"
+pagination:
+  data: collections
+  size: 1
+  alias: category
+  filter: [all, posts, categories]
+permalink: /categories/{{ category | slug }}/
+layout: layouts/base.njk
+---
+<h1>{{ category }}</h1>
+
+{% import 'macros.njk' as macros %}
+
+{{ macros.postList(collections[category]) }}

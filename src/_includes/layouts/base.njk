@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{ title or metadata.title }}</title>
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/prism.css">
+<link rel="canonical" href="{{ page.url | absoluteURL }}">
+<link rel="alternate" type="application/rss+xml" title="{{ metadata.title }}" href="/atom.xml">
+
+{% if not title %}<meta property="twitter:account_id" content="30968081">{% endif %}
+{% if title %}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@{{ metadata.author.twitter }}">
+  <meta property="og:title" content="{{ title }}">
+{% endif %}
+
+<header class="site-header">
+  <div class="wrapper">
+    <h1 class="site-title"><a href="/">{{ metadata.title }}</a></h1>
+    <p class="tagline">{{ metadata.description }}</p>
+
+    <nav class="site-nav">
+      <a href="/atom.xml">RSS</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-content">
+  <div class="wrapper">
+    {{ content | safe }}
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <p>{{ metadata.title }}</p>
+        <p>Source at <a href="https://github.com/{{ metadata.repo }}/">{{ metadata.repo }}</a></p>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          <li>
+            <a href="https://github.com/{{ metadata.author.github }}"><span class="icon icon--github">{% include "icon-github.svg" %}</span><span class="username">{{ metadata.author.github }}</span></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/{{ metadata.author.twitter }}"><span class="icon icon--twitter">{% include "icon-twitter.svg" %}</span><span class="username">{{ metadata.author.twitter }}</span></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Copyright © {{ metadata.author.name }}</p>
+        <p><a href="mailto:{{ metadata.author.email }}">{{ metadata.author.email }}</a></p>
+      </div>
+    </div>
+
+  </div>
+</footer>
+{% if comments %}
+  <script defer src="https://cdn.commento.io/js/commento.js"></script>
+{% endif %}
+<script src="https://cdn.commento.io/js/count.js"></script>
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', '{{ metadata.google_analytics_tracking_id }}', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>

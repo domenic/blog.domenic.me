@@ -1,3 +1,0 @@
-{% for category in page.categories %}
-  <a class="category-link" href="/categories/{{ category | downcase }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
-{% endfor %}
