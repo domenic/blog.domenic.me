@@ -32,6 +32,7 @@
   from = "https://domenic.me/*"
   to = "https://blog.domenic.me/:splat"
   status = 302
+  force = true
 
 # Older revisions of the blog had these URLs working
 
