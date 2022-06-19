@@ -1,0 +1,23 @@
+[build]
+  publish = "dist/"
+  command = "npm run build"
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    Strict-Transport-Security = "max-age=63072000;includeSubDomains;preload"
+    Access-Control-Allow-Origin = "*"
+    X-Content-Type-Options = "nosniff"
+
+[[redirects]]
+  from = "/archives"
+  to = "/"
+
+[[redirects]]
+  from = "/categories/node-dot-js"
+  to = "/categories/node.js"
+
+[[redirects]]
+  from = "/categories/node-js"
+  to = "/categories/node.js"
