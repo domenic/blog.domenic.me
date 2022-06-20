@@ -2,6 +2,7 @@
 const pluginRSS = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
+const adjustHeadingLevel = require('./adjust-heading-level.js');
 const metadata = require('./src/_data/metadata.json');
 
 module.exports = eleventyConfig => {
@@ -12,10 +13,14 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/images');
   eleventyConfig.addPassthroughCopy({ 'node_modules/prismjs/themes/prism.css': 'css/prism.css' });
 
-  eleventyConfig.setLibrary('md', markdownIt({
-    html: true,
-    typographer: true
-  }));
+  eleventyConfig.setLibrary(
+    'md',
+    markdownIt({
+      html: true,
+      typographer: true
+    })
+    .use(adjustHeadingLevel, { firstLevel: 2 })
+  );
 
   addFilters(eleventyConfig);
 

@@ -281,40 +281,46 @@ pre > code {
 .post-header {
   margin-bottom: 30px;
 }
-.post-title {
-  font-size: 42px;
+
+h2.page-heading {
+  font-size: 32px;
   letter-spacing: -1px;
   line-height: 1;
 }
+
+.post h2 {
+  font-size: 42px;
+}
+
 @media screen and (max-width: 800px) {
-  .post-title {
+  .post h2 {
     font-size: 36px;
   }
 }
 .post-content {
   margin-bottom: 30px;
 }
-.post-content h2 {
+.post-content h3 {
   font-size: 32px;
 }
 @media screen and (max-width: 800px) {
-  .post-content h2 {
+  .post-content h3 {
     font-size: 28px;
   }
 }
-.post-content h3 {
+.post-content h4 {
   font-size: 26px;
 }
 @media screen and (max-width: 800px) {
-  .post-content h3 {
+  .post-content h4 {
     font-size: 22px;
   }
 }
-.post-content h4 {
+.post-content h5 {
   font-size: 20px;
 }
 @media screen and (max-width: 800px) {
-  .post-content h4 {
+  .post-content h5 {
     font-size: 18px;
   }
 }
@@ -329,31 +335,19 @@ pre > code {
 #blog-archives article {
   padding: 1em 0 1em;
   position: relative;
-  background: 0 bottom left repeat-x;
 }
-#blog-archives article:last-child {
-  background: none;
-}
-#blog-archives article footer {
-  padding: 0;
-  margin: 0;
-}
-#blog-archives h1 {
-  margin-bottom: 0.3em;
-}
-#blog-archives h2 {
+#blog-archives .year-heading {
   display: none;
-}
-#blog-archives h1 {
-  font-size: 1.5em;
-}
-#blog-archives h1 a {
-  color: inherit;
-  font-weight: normal;
-  display: inline-block;
 }
 #blog-archives .entry-content {
   display: none;
+}
+#blog-archives .article-title {
+  display: block;
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 8px;
+  color: inherit;
 }
 #blog-archives time {
   font-size: .9em;
@@ -372,16 +366,17 @@ pre > code {
   #blog-archives article {
     margin-left: 5em;
   }
-  #blog-archives h2 {
+  #blog-archives .year-heading {
+    display: block;
     margin-bottom: .3em;
     font-weight: normal;
-    display: inline-block;
+    font-size: 24px;
     position: relative;
     top: -1px;
     padding-top: 0.2em;
     float: left;
   }
-  #blog-archives h2:not(:first-child) {
+  #blog-archives .year-heading:not(:first-child) {
     border-top: 1px dotted lightgray;
   }
   #blog-archives time {

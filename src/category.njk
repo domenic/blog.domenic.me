@@ -9,8 +9,8 @@ pagination:
 permalink: /categories/{{ category | slug }}/
 layout: layouts/base.njk
 ---
-<h1>{{ category }}</h1>
+<h2 class="page-heading">{{ category }}</h2>
 
 {% import 'macros.njk' as macros %}
 
-{{ macros.postList(collections[category]) }}
+{{ macros.postList(collections[category], "h3") }}
