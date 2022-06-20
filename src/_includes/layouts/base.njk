@@ -34,33 +34,27 @@
   </div>
 </div>
 
-<footer class="site-footer">
-  <div class="wrapper">
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <p>{{ metadata.title }}</p>
-        <p>Source at <a href="https://github.com/{{ metadata.repo }}/">{{ metadata.repo }}</a></p>
-      </div>
+<footer>
+  <div>
+    <p>{{ metadata.title }}</p>
+    <p>Source at <a href="https://github.com/{{ metadata.repo }}/">{{ metadata.repo }}</a></p>
+  </div>
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          <li>
-            <a href="https://github.com/{{ metadata.author.github }}"><span class="icon icon--github">{% include "icon-github.svg" %}</span><span class="username">{{ metadata.author.github }}</span></a>
-          </li>
-          <li>
-            <a href="https://twitter.com/{{ metadata.author.twitter }}"><span class="icon icon--twitter">{% include "icon-twitter.svg" %}</span><span class="username">{{ metadata.author.twitter }}</span></a>
-          </li>
-        </ul>
-      </div>
+  <ul id="social-media-list">
+    <li>
+      <a href="https://github.com/{{ metadata.author.github }}"><span class="icon icon--github">{% include "icon-github.svg" %}</span><span class="username">{{ metadata.author.github }}</span></a>
+    </li>
+    <li>
+      <a href="https://twitter.com/{{ metadata.author.twitter }}"><span class="icon icon--twitter">{% include "icon-twitter.svg" %}</span><span class="username">{{ metadata.author.twitter }}</span></a>
+    </li>
+  </ul>
 
-      <div class="footer-col footer-col-3">
-        <p>Copyright © {{ metadata.author.name }}</p>
-        <p><a href="mailto:{{ metadata.author.email }}">{{ metadata.author.email }}</a></p>
-      </div>
-    </div>
-
+  <div>
+    <p>Copyright © {{ metadata.author.name }}</p>
+    <p><a href="mailto:{{ metadata.author.email }}">{{ metadata.author.email }}</a></p>
   </div>
 </footer>
+
 <script>
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
 ga('create', '{{ metadata.google_analytics_tracking_id }}', 'auto');
