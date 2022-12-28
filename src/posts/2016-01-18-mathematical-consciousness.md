@@ -39,7 +39,7 @@ There's no need to run a simulation. The mathematical structure exists, independ
 
 If you find this interesting and potentially compelling, I recommend the following resources:
 
-- <a href="http://www.amazon.com/gp/product/1597805394/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1597805394&amp;linkCode=as2&amp;tag=hiddevaria-20&amp;linkId=2AWNAXTWHGOHWXWS"><cite>Permutation City</cite></a> places these ideas in a fictional context, to great effect
-- Tegmark's papers: <a href="http://arxiv.org/abs/gr-qc/9704009"><cite>Is "the theory of everything" merely the ultimate ensemble theory?</cite></a> (1997) and <a href="http://arxiv.org/abs/0704.0646"><cite>The mathematical universe</cite></a> (2007)
+- <a href="https://www.amazon.com/gp/product/1597805394/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1597805394&amp;linkCode=as2&amp;tag=hiddevaria-20&amp;linkId=2AWNAXTWHGOHWXWS"><cite>Permutation City</cite></a> places these ideas in a fictional context, to great effect
+- Tegmark's papers: <a href="https://arxiv.org/abs/gr-qc/9704009"><cite>Is "the theory of everything" merely the ultimate ensemble theory?</cite></a> (1997) and <a href="http://arxiv.org/abs/0704.0646"><cite>The mathematical universe</cite></a> (2007)
 - Peter Woit's [critique of Tegmark](https://www.math.columbia.edu/~woit/wordpress/?p=6551), pointing out that this does not make any real testable predictions and thus is more philosophy than science (which is fine by me)
-- Hans Moravec's <a href="http://www.frc.ri.cmu.edu/~hpm/project.archive/general.articles/1998/SimConEx.98.html"><cite>Simulation, Consciousness, Existence</cite></a> which contains a deeper investigation of these issues, including some talk of morality
+- Hans Moravec's <a href="https://frc.ri.cmu.edu/~hpm/project.archive/general.articles/1998/SimConEx.98.html"><cite>Simulation, Consciousness, Existence</cite></a> which contains a deeper investigation of these issues, including some talk of morality
