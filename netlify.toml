@@ -14,7 +14,7 @@
 # dates in the post URLs.
 
 [[redirects]]
-  from = "https://domenic.me/201:rest-of-date/:post/"
+  from = "https://domenic.me/:year/:month/:day/:post/"
   to = "https://blog.domenic.me/:post"
 
 [[redirects]]
