@@ -10,6 +10,7 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
   eleventyConfig.addPassthroughCopy('src/css');
+  eleventyConfig.addPassthroughCopy('src/js');
   eleventyConfig.addPassthroughCopy('src/images');
   eleventyConfig.addPassthroughCopy({ 'node_modules/prismjs/themes/prism.css': 'css/prism.css' });
 
