@@ -11,9 +11,13 @@ function main() {
 }
 
 function insertPointerDownPrefetchSpeculationRules() {
+  // "href_matches" is necessary to work around https://crbug.com/1425861.
   addSpeculationRules({
     prefetch: [
-      { source: "document" }
+      {
+        source: "document",
+        where: { href_matches: { protocol: "https" } }
+      }
     ]
   });
 }
