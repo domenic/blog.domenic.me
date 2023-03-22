@@ -11,6 +11,9 @@ function main() {
 }
 
 function insertPointerDownPrefetchSpeculationRules() {
+  // Workaround for https://crbug.com/1425870.
+  document.body.addEventListener("pointerdown", () => {});
+  
   // "href_matches" is necessary to work around https://crbug.com/1425861.
   addSpeculationRules({
     prefetch: [
