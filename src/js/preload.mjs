@@ -19,7 +19,7 @@ function insertPointerDownPrefetchSpeculationRules() {
     prefetch: [
       {
         source: "document",
-        where: { href_matches: { protocol: "https" } }
+        where: { href_matches: "https://*/*\\?*#*" }
       }
     ]
   });
