@@ -56,7 +56,24 @@
   </div>
 </footer>
 
-<script type="module" async src="/js/preload.mjs"></script>
+<script type="speculationrules">
+{
+  "prerender": [
+    {
+      "source": "document",
+      "where": { "href_matches": "/*\\?*#*" },
+      "eagerness": "moderate"
+    }
+  ],
+  "prefetch": [
+    {
+      "source": "document",
+      "where": { "not": { "href_matches": "/*\\?*#*" } },
+      "eagerness": "moderate"
+    }
+  ]
+}
+</script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ metadata.google_analytics_tracking_id }}"></script>
 <script>
