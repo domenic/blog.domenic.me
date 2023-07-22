@@ -2,6 +2,7 @@
 const pluginRSS = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
 const adjustHeadingLevel = require('./adjust-heading-level.js');
 const metadata = require('./src/_data/metadata.json');
 
@@ -21,6 +22,9 @@ module.exports = eleventyConfig => {
       typographer: true
     })
     .use(adjustHeadingLevel, { firstLevel: 2 })
+    .use(markdownItAnchor, {
+      tabIndex: false
+    })
   );
 
   addFilters(eleventyConfig);
