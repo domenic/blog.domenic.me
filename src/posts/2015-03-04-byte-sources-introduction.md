@@ -2,7 +2,8 @@
 layout: layouts/post
 title: "Byte Sources: Introduction"
 date: 2015-03-04T00:00:00Z
-tags: [Streams]
+tags: [web standards]
+blurb: The intro to a short series of posts explaining some design decisions behind the web streams APIs, and how they abstract over underlying I/O interfaces.
 ---
 
 _This post is the beginning of a series of posts regarding some of the more interesting issues I've encountered while working on the Streams Standard._

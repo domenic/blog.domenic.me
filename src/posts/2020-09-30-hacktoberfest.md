@@ -2,7 +2,8 @@
 layout: layouts/post
 title: "DigitalOcean's Hacktoberfest is Hurting Open Source"
 date: 2020-09-30T21:00:00Z
-tags: [Open Source]
+tags: [other]
+blurb: A plea for DigitalOcean to stop making open source maintainers' lives miserable, once a year every year.
 ---
 
 For the last couple of years, [DigitalOcean](https://www.digitalocean.com/) has run

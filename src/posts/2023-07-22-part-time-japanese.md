@@ -2,7 +2,8 @@
 layout: layouts/post
 title: "Learning Japanese Part-Time"
 date: 2023-07-22T09:00:00Z
-tags: [Not Software]
+tags: [other]
+blurb: After 6.5 years of studying Japanese, and only getting moderately far, I reflect on how to most effectively study a second language while only being able to spare an hour or two a day.
 ---
 
 I signed up for my first Japanese class in December 2016. It was a group class at New York's [Japan Society](https://japansociety.org/). Since then I've been more-or-less continually studying the language, and just over one year ago I moved to Tokyo.

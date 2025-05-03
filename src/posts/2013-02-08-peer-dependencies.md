@@ -2,7 +2,8 @@
 layout: layouts/post
 title: "Peer Dependencies"
 date: 2013-02-08T00:00:00Z
-tags: [Node.js]
+tags: [javascript]
+blurb: I added the original peer dependencies feature to npm 1.2.10, to allow plugins to express what versions of a host package they're compatible with.
 ---
 
 npm is awesome as a package manager. In particular, it handles sub-dependencies very well: if my package depends on

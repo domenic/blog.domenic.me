@@ -2,7 +2,8 @@
 layout: layouts/post
 title: "Strict Mode = Static Scoping"
 date: 2013-03-19T00:00:00Z
-tags: [JavaScript]
+tags: [javascript]
+blurb: JavaScript strict mode has a lesser-known benefit in how it brings sanity to variable scoping.
 ---
 
 It is indeed
@@ -84,7 +85,7 @@ in the above examples, the meaning of identifiers like `require` or `__filename`
 
 ## So? Just Don't Use Those Things
 
-A common refrain from people who [can't handle typing `"use strict"](https://twitter.com/izs/status/310833154401398784)
+A common refrain from people who [can't handle typing `"use strict"`](https://twitter.com/izs/status/310833154401398784)
 is that they'll simply not use these features. And this indeed suffices: if you subset the language, perhaps using tools
 like JSHint to enforce your subsetting rules, you can create a more sane programming environment.
 

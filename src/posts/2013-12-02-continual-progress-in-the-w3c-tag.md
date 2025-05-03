@@ -2,7 +2,8 @@
 layout: layouts/post
 title: "Continual Progress in the W3C TAG"
 date: 2013-12-02T00:00:00Z
-tags: [Web]
+tags: [web standards]
+blurb: My "campaign speech" asking for W3C members to vote me onto the W3C Technical Architecture Group.
 ---
 
 The W3C Technical Architecture Group has made immeasurable progress this year since

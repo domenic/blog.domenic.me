@@ -2,7 +2,8 @@
 layout: layouts/post
 title: "The Extensible Web"
 date: 2013-10-07T00:00:00Z
-tags: [Web]
+tags: [web standards]
+blurb: A view from 2013 of how the web platform has been evolving recently, and how it can evolve better going forward by using the extensible web principles.
 ---
 
 *This post adapts [my talk from JSConf EU 2013][jsconf-eu].*

@@ -1,30 +1,17 @@
-{%- macro categoryList(categories) -%}
-{%- set comma = joiner() -%}
-{%- for category in categories -%}
-{{ comma() }} <a class="category-link" href="/categories/{{ category | slug }}">{{ category }}</a>
-{%- endfor -%}
+{%- macro essayList(posts, link, dateFormat, listType) -%}
+<{{ listType }} class="essay-list">
+{% for post in posts %}
+  <li>
+    <a href="{{ post.url }}">
+      <span class="title">{{ post.data.title }}</span>
+      <time datetime="{{ post.date.toISOString() }}">{% if dateFormat == "year" %}{{ post.date | getYear }}{% else %}{{ post.date | readableDate }}{% endif %}</time>
+    </a>
+    <p class="blurb">{{ post.data.blurb }}</p>
+  </li>
+{% endfor %}
+</{{ listType }}>
+{% if link %}
+<a class="view-all" href="{{ link }}">View all →</a>
+{% endif %}
 {%- endmacro -%}
 
-{%- macro postList(posts, yearHeading) -%}
-<div id="blog-archives">
-  {% for post in posts | reverse %}
-
-  {%- set this_year = post.data.date | getYear -%}
-
-  {%- if year != this_year -%}
-    {%- set year = this_year -%}
-    <{{yearHeading}} class="year-heading">{{year}}</{{yearHeading}}>
-
-  {% endif -%}
-
-  <article>
-    <a class="article-title" href="{{ post.url }}">{{ post.data.title }}</a>
-    <time datetime="{{ post.date.toISOString() }}">{{ post.date | archiveDateHTML | safe }}</time>
-    <footer>
-      <span class="categories">posted in {{ categoryList(post.data.tags) }}</span>
-    </footer>
-  </article>
-
-  {% endfor %}
-</div>
-{%-endmacro -%}

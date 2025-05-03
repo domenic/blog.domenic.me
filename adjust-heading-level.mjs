@@ -1,8 +1,6 @@
-"use strict";
-
 // Based on https://gist.github.com/rodneyrehm/4feec9af8a8635f7de7cb1754f146a39
 
-module.exports = (md, { firstLevel }) => {
+export default (md, { firstLevel }) => {
   const levelOffset = firstLevel - 1;
 
   md.core.ruler.push("adjust-heading-levels", ({ tokens }) => {

@@ -1,13 +1,22 @@
 'use strict';
-const pluginRSS = require('@11ty/eleventy-plugin-rss');
-const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const markdownIt = require('markdown-it');
-const markdownItAnchor = require('markdown-it-anchor');
-const adjustHeadingLevel = require('./adjust-heading-level.js');
-const metadata = require('./src/_data/metadata.json');
+import { feedPlugin } from '@11ty/eleventy-plugin-rss';
+import pluginSyntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
+import markdownIt from 'markdown-it';
+import markdownItAnchor from 'markdown-it-anchor';
+import adjustHeadingLevel from './adjust-heading-level.mjs';
+import metadata from './src/_data/metadata.json' with { type: 'json' };
 
-module.exports = eleventyConfig => {
-  eleventyConfig.addPlugin(pluginRSS);
+export default async (eleventyConfig) => {
+  eleventyConfig.addPlugin(feedPlugin, {
+    type: 'atom',
+    outputPath: 'feed.xml',
+    collection: {
+      name: 'posts',
+      limit: 10
+    },
+    metadata: transformMetadataForFeedPlugin(metadata)
+  });
+
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
 
   eleventyConfig.addPassthroughCopy('src/css');
@@ -65,26 +74,19 @@ function addFilters(eleventyConfig) {
     return readableDTF.format(dateObj);
   });
 
-  const archiveDTF = new Intl.DateTimeFormat('en-US', { month: 'short', timeZone: 'UTC' });
-  eleventyConfig.addFilter('archiveDateHTML', dateObj => {
-    return `<span class="month">${archiveDTF.format(dateObj)}</span> ` +
-           `<span class="day">${dateObj.getUTCDate().toString().padStart(2, '0')}</span> ` +
-           `<span class="year">${dateObj.getUTCFullYear()}</span>`;
-  });
-
   eleventyConfig.addFilter('getYear', dateObj => {
     return dateObj.getUTCFullYear();
   });
 
-  eleventyConfig.addFilter('toUTCString', dateString => {
-    return (new Date(dateString)).toUTCString();
-  });
-
   eleventyConfig.addFilter('slugToPermalink', string => {
-    return string.replace(/^\/posts\/\d{4}-\d{2}-\d{2}-/, "") + "/";
+    return string.replace(/^\/posts\/\d{4}-\d{2}-\d{2}-/, '') + '/';
   });
 
-  eleventyConfig.addFilter('absoluteURL', relativeURL => {
-    return (new URL(relativeURL, metadata.url)).href;
+  eleventyConfig.addFilter('exclude', (array, arrayToExclude) => {
+    return array.filter(item => !arrayToExclude.includes(item));
   });
+}
+
+function transformMetadataForFeedPlugin(metadata) {
+  return { ...metadata, subtitle: metadata.description };
 }

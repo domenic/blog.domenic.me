@@ -2,7 +2,8 @@
 layout: layouts/post
 title: "The Revealing Constructor Pattern"
 date: 2014-02-14T00:00:00Z
-tags: [JavaScript, Promises, Streams]
+tags: [web standards]
+blurb: A new-at-the-time JavaScript design pattern, used by several web APIs, to preserve encapsulation while keeping a functional constructor.
 ---
 
 I want to document an interesting pattern we've seen emerge in some recent web platform specs, including [promises](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-objects) and [streams](https://github.com/whatwg/streams). I'm calling it the **revealing constructor pattern**.

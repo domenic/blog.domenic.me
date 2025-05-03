@@ -2,7 +2,8 @@
 layout: layouts/post
 title: "Explaining Away the Web's Magic"
 date: 2013-06-10T00:00:00Z
-tags: [Web]
+tags: [web standards, favorites]
+blurb: An introduction to the extensible web manifesto, a web API design philosophy that espouses exposing primitives and letting developers build high-level abstractions that are competitive with those shipped with the browser.
 ---
 
 Today we revealed [The Extensible Web Manifesto](http://extensiblewebmanifesto.org/), calling for a new approach to

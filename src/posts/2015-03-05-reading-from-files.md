@@ -2,7 +2,8 @@
 layout: layouts/post
 title: "Reading from Files"
 date: 2015-03-05T00:00:00Z
-tags: [Streams]
+tags: [web standards]
+blurb: Designing JavaScript streams APIs for file I/O leads us to consider bring-your-own-buffer APIs and how to avoid race conditions.
 ---
 
 _This post is part of a series on the byte sources underlying the readable streams in the Streams Standard. See [the introductory post](/byte-sources-introduction/) for more background and links to the rest of the series._

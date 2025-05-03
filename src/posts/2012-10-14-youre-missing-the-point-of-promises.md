@@ -2,7 +2,8 @@
 layout: layouts/post
 title: "You're Missing the Point of Promises"
 date: 2012-10-14T22:05:55Z
-tags: [Promises]
+tags: [javascript, favorites]
+blurb: The original essay that helped promises win over callbacks in the JavaScript ecosystem.
 ---
 
 *This post originally appeared [as a gist](https://gist.github.com/domenic/3889970). Since then, the development of
@@ -46,16 +47,16 @@ mean—[CommonJS Promises/A][]. This is one of the smallest "specs" I've seen. T
 the behavior of a single function, `then`:
 
 > A promise is defined as an object that has a function as the value for the property `then`:
-
+>
 > `then(fulfilledHandler, errorHandler, progressHandler)`
-
+>
 > Adds a `fulfilledHandler`, `errorHandler`, and `progressHandler` to be called for completion of a promise. The
 > `fulfilledHandler` is called when the promise is fulfilled. The `errorHandler` is called when a promise fails. The
 > `progressHandler` is called for progress events. All arguments are optional and non-function values are ignored. The
 > `progressHandler` is not only an optional argument, but progress events are purely optional. Promise implementors are
 > not required to ever call a `progressHandler` (the `progressHandler` may be ignored), this parameter exists so that
 > implementors may call it if they have progress events to report.
-
+>
 > This function should return a new promise that is fulfilled when the given `fulfilledHandler` or `errorHandler`
 > callback is finished. This allows promise operations to be chained together. The value returned from the callback
 > handler is the fulfillment value for the returned promise. If the callback throws an error, the returned promise will

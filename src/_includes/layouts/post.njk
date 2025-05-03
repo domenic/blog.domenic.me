@@ -3,19 +3,15 @@ layout: layouts/base
 permalink: "{{ page.fileSlug | slugToPermalink }}"
 ---
 
-{% import 'macros.njk' as macros %}
-
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h2 itemprop="name headline">{{ title }}</h2>
     <p class="post-meta">
       <time datetime="{{ date.toISOString() }}" itemprop="datePublished">{{ date | readableDate }}</time>
-      | <a href="https://twitter.com/intent/tweet?text={{ title }}&amp;url={{ page.url | absoluteURL }}&amp;via={{ metadata.author.twitter }}" target="_blank">Tweet</a>
-      | posted in {{ macros.categoryList(tags) }}
     </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    {{ content | safe }}
+{{ content | safe }}
   </div>
 </article>

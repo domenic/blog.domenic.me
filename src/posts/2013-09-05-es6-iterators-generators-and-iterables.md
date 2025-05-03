@@ -2,7 +2,8 @@
 layout: layouts/post
 title: "ES6 Iterators, Generators, and Iterables"
 date: 2013-09-06T00:00:00Z
-tags: [JavaScript]
+tags: [javascript]
+blurb: A reference guide for JavaScript iterator and generator terminology, from back when they were just starting to see implementations in JavaScript engines.
 ---
 
 I wrote up a quick guide to the terminology around ES6's iteration-related concepts, plus some notes and other

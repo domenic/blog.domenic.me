@@ -2,7 +2,8 @@
 layout: layouts/post
 title: "Portable Node.js Code"
 date: 2012-10-02T00:00:00Z
-tags: [Node.js]
+tags: [javascript]
+blurb: In the early days of Node.js, I often ran into people writing code that excluded Windows users.
 ---
 
 *This post originally appeared [as a gist](https://gist.github.com/domenic/2790533), and then

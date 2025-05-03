@@ -2,7 +2,8 @@
 layout: layouts/post
 title: "Reading from Sockets"
 date: 2015-03-16T00:00:00Z
-tags: [Streams]
+tags: [web standards]
+blurb: Designing JavaScript streams APIs for network sockets, on top of non-blocking syscalls, leads us to the concept of push vs. pull sources.
 ---
 
 _This post is part of a series on the byte sources underlying the readable streams in the Streams Standard. See [the introductory post](/byte-sources-introduction/) for more background and links to the rest of the series._

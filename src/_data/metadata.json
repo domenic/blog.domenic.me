@@ -1,13 +1,15 @@
 {
-  "title": "Hidden Variables",
-  "url": "https://blog.domenic.me/",
-  "description": "Domenic's blog about coding and stuff",
+  "title": "Domenic Denicola",
+  "base": "https://domenic.me/",
+  "language": "en",
+  "description": "Domenic Denicola's website",
   "repo": "domenic/blog.domenic.me",
   "author": {
     "name": "Domenic Denicola",
     "email": "d@domenic.me",
     "twitter": "domenic",
-    "github": "domenic"
+    "github": "domenic",
+    "linkedin": "domenicdenicola"
   },
   "google_analytics_tracking_id": "G-CNPHZNC0XF"
 }

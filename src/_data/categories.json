@@ -1,0 +1,18 @@
+{
+  "web standards": {
+    "title": "Web Standards",
+    "blurb": "My professional work has been centered around web standards, e.g., the creation of new web APIs. These essays are about the standards process and some of my API design work."
+  },
+  "javascript": {
+    "title": "JavaScript & Node.js",
+    "blurb": "Much of my early career was around the evolution of the JavaScript language and the Node.js runtime."
+  },
+  "other": {
+    "title": "Other",
+    "blurb": "Essays that don't yet have enough siblings to be grouped into a more descriptive category."
+  },
+  "posts": {
+    "title": "Archives",
+    "blurb": "Although reverse-chronological order is not the most interesting way to read my writing, you can view it all here."
+  }
+}

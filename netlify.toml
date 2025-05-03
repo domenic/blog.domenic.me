@@ -10,40 +10,59 @@
     Access-Control-Allow-Origin = "*"
     X-Content-Type-Options = "nosniff"
 
-# In its earliest days the blog was hosted on domenic.me directly, and used
-# dates in the post URLs.
+# For most of the site's life, after a brief stint on https://domenic.me, everything was hosted on https://blog.domenic.me. Now we're back on https://domenic.me.
 
 [[redirects]]
-  from = "https://domenic.me/:year/:month/:day/:post/"
-  to = "https://blog.domenic.me/:post"
-
-[[redirects]]
-  from = "https://domenic.me/categories/:category"
-  to = "https://blog.domenic.me/categories/:category"
-
-[[redirects]]
-  from = "https://domenic.me/blog/archives/"
-  to = "https://blog.domenic.me/"
-
-# Any hit to domenic.me that isn't covered by the above should 302 to the blog.
-# Maybe one day domenic.me will have independent content.
-
-[[redirects]]
-  from = "https://domenic.me/*"
-  to = "https://blog.domenic.me/:splat"
-  status = 302
+  from = "https://blog.domenic.me/*"
+  to = "https://domenic.me/:splat"
   force = true
 
-# Older revisions of the blog had these URLs working
+# Older revisions had these URLs working.
 
 [[redirects]]
-  from = "/archives"
-  to = "/"
+  from = "/:year/:month/:day/:post/"
+  to = "/:post"
 
 [[redirects]]
-  from = "/categories/node-dot-js"
-  to = "/categories/node.js"
+  from = "/blog/archives/"
+  to = "/archives/"
 
 [[redirects]]
-  from = "/categories/node-js"
-  to = "/categories/node.js"
+  from = "https://blog.domenic.me/atom.xml"
+  to = "/feed.xml"
+
+[[redirects]]
+  from = "https://blog.domenic.me/categories/node-dot-js"
+  to = "/categories/javascript"
+
+[[redirects]]
+  from = "https://blog.domenic.me/categories/node-js"
+  to = "/categories/javascript"
+
+[[redirects]]
+  from = "https://blog.domenic.me/categories/node.js"
+  to = "/categories/javascript"
+
+[[redirects]]
+  from = "https://blog.domenic.me/categories/promises"
+  to = "/categories/javascript"
+
+[[redirects]]
+  from = "https://blog.domenic.me/categories/web"
+  to = "/categories/web-standards"
+
+[[redirects]]
+  from = "https://blog.domenic.me/categories/streams"
+  to = "/categories/web-standards"
+
+[[redirects]]
+  from = "https://blog.domenic.me/categories/not-software"
+  to = "/categories/other"
+
+[[redirects]]
+  from = "https://blog.domenic.me/categories/open-source"
+  to = "/categories/other"
+
+[[redirects]]
+  from = "https://blog.domenic.me/categories/ai"
+  to = "/categories/other"

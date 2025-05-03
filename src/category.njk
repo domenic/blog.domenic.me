@@ -1,16 +1,26 @@
 ---
 eleventyComputed:
-  title: "{{ category }}"
+  title: "{{ categories[category].title | safe }}"
+  blurb: "{{ categories[category].blurb | safe }}"
+  permalink: >-
+    {%- if category == "posts" -%}
+    /archives/
+    {%- else -%}
+    /categories/{{ category | slug }}/
+    {%- endif -%}
+
 pagination:
   data: collections
   size: 1
   alias: category
-  filter: [all, posts, categories]
-permalink: /categories/{{ category | slug }}/
+  filter: [all, categories, favorites]
 layout: layouts/base.njk
+pageId: category
 ---
-<h2 class="page-heading">{{ category }}</h2>
+<h2>{{ title }}</h2>
+
+<p id="blurb">{{ blurb }}</p>
 
 {% import 'macros.njk' as macros %}
 
-{{ macros.postList(collections[category], "h3") }}
+{{ macros.essayList(collections[category].toReversed(), undefined, "full-date", "ol") }}
