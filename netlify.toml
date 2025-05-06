@@ -10,13 +10,6 @@
     Access-Control-Allow-Origin = "*"
     X-Content-Type-Options = "nosniff"
 
-# For most of the site's life, after a brief stint on https://domenic.me, everything was hosted on https://blog.domenic.me. Now we're back on https://domenic.me.
-
-[[redirects]]
-  from = "https://blog.domenic.me/*"
-  to = "https://domenic.me/:splat"
-  force = true
-
 # Older revisions had these URLs working.
 
 [[redirects]]
@@ -29,6 +22,10 @@
 
 [[redirects]]
   from = "https://blog.domenic.me/atom.xml"
+  to = "/feed.xml"
+
+[[redirects]]
+  from = "/atom.xml"
   to = "/feed.xml"
 
 [[redirects]]
@@ -66,3 +63,10 @@
 [[redirects]]
   from = "https://blog.domenic.me/categories/ai"
   to = "/categories/other"
+
+# For most of the site's life, after a brief stint on https://domenic.me, everything was hosted on https://blog.domenic.me. Now we're back on https://domenic.me.
+
+[[redirects]]
+  from = "https://blog.domenic.me/*"
+  to = "https://domenic.me/:splat"
+  force = true
