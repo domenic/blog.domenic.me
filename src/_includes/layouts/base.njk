@@ -2,6 +2,7 @@
 <html lang="{{ metadata.language }}">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
 
 {%- set pageTitle = title or metadata.title -%}
 {%- set description = blurb or metadata.description -%}
@@ -11,7 +12,8 @@
 <title>{{ metadata.title if pageTitle == metadata.title else pageTitle + ' | ' + metadata.title }}</title>
 
 <link rel="stylesheet" href="/css/main.css">
-<link rel="stylesheet" href="/css/prism.css">
+<link rel="stylesheet" href="/css/prism.css" media="(prefers-color-scheme: light)">
+<link rel="stylesheet" href="/css/prism-dark.css" media="(prefers-color-scheme: dark)">
 
 <link rel="canonical" href="{{ url }}">
 <link rel="alternate" type="application/rss+xml" title="{{ metadata.title }}" href="/feed.xml">

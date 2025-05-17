@@ -6,7 +6,7 @@ pageId: home
 {% import 'macros.njk' as macros %}
 
 <section class="hero">
-  <img src="images/headshot-2x.avif" srcset="images/headshot-1x.avif 1x, images/headshot-2x.avif 2x, images/headshot-3x.avif 3x" alt="Domenic Denicola" width="120" height="120">
+  <img srcset="images/headshot-1x.avif 1x, images/headshot-2x.avif 2x, images/headshot-3x.avif 3x" alt="Domenic Denicola" width="120" height="120">
   <div class="bio">
     <p>I'm a software engineer with a focus on web browser development and web standards. Since 2014, I've worked at Google on the Chrome team to make the web more capable.</p>
 
@@ -15,7 +15,6 @@ pageId: home
     <p>Outside of work, I'm passing the time before <a href="https://ai-2027.com/">the singularity hits</a> by exploring Tokyo, where I moved in 2022. I spend a lot of time trying to learn Japanese, as well as keeping up with the latest in AI capabilities and safety research. I also maintain the <a href="https://github.com/jsdom/jsdom">jsdom</a> open-source project. I occasionally dream of making time to go back to <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=q_kWDkUAAAAJ&citation_for_view=q_kWDkUAAAAJ:u5HHmVD_uO8C">physics research</a>.</p>
   </div>
   <div class="socials">
-    {# <a href="mailto:{{ metadata.author.email }}" aria-label="Email me at ">{{ metadata.author.email }}</a> #}
     <a href="https://x.com/{{ metadata.author.twitter }}" aria-label="@{{ metadata.author.twitter }} on X"><span aria-hidden="true" class="icon">{% include "icon-x.svg" %}</span></a>
     <a href="https://github.com/{{ metadata.author.github }}" aria-label="@{{ metadata.author.github }} on GitHub"><span aria-hidden="true" class="icon">{% include "icon-github.svg" %}</span></a>
     <a href="https://www.linkedin.com/in/{{ metadata.author.linkedin }}" aria-label="{{ metadata.author.linkedin }} on LinkedIn"><span aria-hidden="true" class="icon">{% include "icon-linkedin.svg" %}</span></a>

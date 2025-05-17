@@ -13,12 +13,18 @@
   --fs-nav: 0.95rem;
   --fs-footer-text: 0.85rem;
 
+  --color-bg: rgb(255 255 255);
   --color-text: rgb(20 20 20);
   --color-divider: rgb(238 238 238);
   --color-border: rgb(221 221 221);
   --color-link: rgb(0 102 204);
   --color-footer-text: rgb(100 100 100);
   --color-blockquote: rgb(80 80 80);
+
+  --color-essay-title: rgb(17 17 17);
+  --color-essay-year: rgb(100 100 136);
+  --color-essay-blurb: rgb(60 60 60);
+  --color-section-heading: rgb(34 34 34);
 
   @media (max-width: 768px) {
     --fs-h1: 1.5rem;
@@ -29,6 +35,21 @@
     --fs-h6: 0.8rem;
     --fs-nav: 0.75rem;
     --fs-footer-text: 0.8rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --color-bg: rgb(20 20 20);
+    --color-text: rgb(235 235 235);
+    --color-divider: rgb(58  58  58);
+    --color-border: rgb(80  80  80);
+    --color-link: rgb(100 180 255);
+    --color-footer-text: rgb(150 150 150);
+    --color-blockquote: rgb(180 180 180);
+
+    --color-essay-title: rgb(220 220 220);
+    --color-essay-year: rgb(150 150 200);
+    --color-essay-blurb: rgb(195 195 195);
+    --color-section-heading: rgb(210 210 210);
   }
 }
 
@@ -41,12 +62,13 @@
 
 html {
   font-size: var(--fs-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
 body {
   font-family: var(--body-font);
   line-height: 1.6;
-  color: var(--color-text);
   max-width: 960px;
   margin: 0 auto;
   padding: 1rem;
@@ -148,9 +170,6 @@ body > footer {
   --fs-essay-title: 1.1rem;
   --fs-essay-year: 0.85rem;
   --fs-essay-blurb: 0.95rem;
-  --color-essay-title: rgb(17 17 17);
-  --color-essay-year: rgb(100 100 136);
-  --color-essay-blurb: rgb(60 60 60);
 
   list-style: none;
   margin: 0;
@@ -196,7 +215,6 @@ main#home {
   --fs-category-heading: 1.2rem;
   --fs-bio: 1rem;
   --fs-socials: 0.9rem;
-  --color-section-heading: rgb(34 34 34);
 
   @media (max-width: 768px) {
     --padding-columns: 0.5rem;
