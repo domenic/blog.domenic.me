@@ -20,6 +20,7 @@
   --color-link: rgb(0 102 204);
   --color-footer-text: rgb(100 100 100);
   --color-blockquote: rgb(80 80 80);
+  --color-figcaption: rgb(60 60 60);
 
   --color-essay-title: rgb(17 17 17);
   --color-essay-year: rgb(100 100 136);
@@ -45,6 +46,7 @@
     --color-link: rgb(100 180 255);
     --color-footer-text: rgb(150 150 150);
     --color-blockquote: rgb(180 180 180);
+    --color-figcaption: rgb(180 180 180);
 
     --color-essay-title: rgb(220 220 220);
     --color-essay-year: rgb(150 150 200);
@@ -357,6 +359,8 @@ main#home {
 }
 
 main#post {
+  --fs-figcaption: 0.95rem;
+
   .post-header {
     margin-bottom: 1.5rem;
   }
@@ -409,6 +413,45 @@ main#post {
     border: 0;
     padding-right: 0;
     padding-left: 0;
+  }
+
+  figure {
+    display: block;
+    max-width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 1rem;
+
+    img:only-of-type {
+      display: block;
+      border-radius: 4px;
+      margin: 0 auto;
+    }
+
+    img {
+      width: auto;
+      height: auto;
+    }
+
+    &.multi-images {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      &.multi-images {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    figcaption {
+      margin-top: 0.75rem;
+
+      font-size: var(--fs-figcaption);
+      color: var(--color-figcaption);
+      text-align: center;
+    }
   }
 }
 
